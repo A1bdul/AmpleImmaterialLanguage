@@ -2,11 +2,11 @@
 <html>
 
 <head>
-    <title>Beta Hat </title>
+    <title>beta Hat </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Beta Hat">
-    <meta name="author" content="Beta Hat">
+    <meta name="description" content="beta Hat">
+    <meta name="author" content="beta Hat">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
         body {
@@ -62,13 +62,25 @@
             background-color: #f44336;
             color: white;
         }
+
+        .copy-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: #2596be;
+            /* Set the initial background color */
+            color: white;
+            transition: background-color 0.3s;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <img src="crown.png" alt="Crown" width="200">
-        <div class="prompt">You have found a Beta Hat. Would you like to pick it up?</div>
+        <div class="prompt">You have found a beta Hat. Would you like to pick it up?</div>
         <div class="options">
             <button class="btn btn-yes">Yes</button>
             <button class="btn btn-no">No</button>
@@ -77,9 +89,29 @@
             <a href="https://t.me/betahatsol">
                 <i class='bx bxl-telegram bx-tada bx-rotate-90'></i>
             </a>
+            <button class="copy-btn" onclick="copyTextAndChangeColor()"><i class='bx bxs-copy'></i></button>
             <a href="https://twitter.com/betahatsol"><i class='bx bxl-twitter bx-tada bx-rotate-90'></i></a>
         </div>
     </div>
+    <script>
+        function copyTextAndChangeColor() {
+            var textToCopy = "Your text to copy goes here"; // Replace with your actual text to copy
+            var copyText = document.createElement("textarea");
+            copyText.value = textToCopy;
+            document.body.appendChild(copyText);
+            copyText.select();
+            document.execCommand("copy");
+            document.body.removeChild(copyText);
+
+            document.body.style.backgroundColor = "red"; // Change to red
+            setTimeout(function () {
+                document.body.style.backgroundColor = "green"; // Change to green after 0.5 seconds
+                setTimeout(function () {
+                    document.body.style.backgroundColor = "#2596be"; // Change back to blue after another 0.5 seconds
+                }, 500);
+            }, 500);
+        }
+    </script>
 </body>
 
 </html>
