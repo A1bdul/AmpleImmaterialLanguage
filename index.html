@@ -21,11 +21,28 @@
 
         .container {
             text-align: center;
+            background-color: #fff;
+            border: 0.25px solid #fff;
+            padding: 50px;
         }
 
         .prompt {
             font-size: 24px;
             margin-bottom: 20px;
+            text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+
+        }
+
+        /* Create the 3D box or border effect */
+        .prompt::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            /* Send the box behind the text */
         }
 
         .options {
@@ -33,6 +50,7 @@
             justify-content: center;
             gap: 20px;
         }
+
 
         .btn {
             padding: 10px 20px;
@@ -68,11 +86,6 @@
             font-size: 16px;
             border: none;
             cursor: pointer;
-            border-radius: 5px;
-            background-color: #2596be;
-            /* Set the initial background color */
-            color: white;
-            transition: background-color 0.3s;
         }
     </style>
 </head>
