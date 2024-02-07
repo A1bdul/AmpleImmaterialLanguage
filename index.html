@@ -109,25 +109,7 @@
             <a href="#"><i class='bx bxl-twitter'></i></a>
         </div>
     </div>
-    <script>
-        function copyTextAndChangeColor() {
-            var textToCopy = "x000000000000000000000000000000000"; // Replace with your actual text to copy
-            var copyText = document.createElement("textarea");
-            copyText.value = textToCopy;
-            document.body.appendChild(copyText);
-            copyText.select();
-            document.execCommand("copy");
-            document.body.removeChild(copyText);
-
-            document.body.style.backgroundColor = "red"; // Change to red
-            setTimeout(function () {
-                document.body.style.backgroundColor = "green"; // Change to green after 0.5 seconds
-                setTimeout(function () {
-                    document.body.style.backgroundColor = "#2596be"; // Change back to blue after another 0.5 seconds
-                }, 500);
-            }, 500);
-        }
-    </script>
+  
 </body>
 
 </html>
